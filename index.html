@@ -7,31 +7,45 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
-
-  Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    body {
+      margin: 0;
+      padding: 0 40px;
+    }
+    #pentagon {
+      background: hotpink;
+      width: min-content;
+      position: relative;
+      margin: 0 auto; 
+    }
+
+    .circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      background: red;
+    }
+
+    .top {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .mid {
+      top: 35%;
+      transform: translateY(-35%);
+    }
   </style>
 </head>
 <body>
 
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div id="pentagon">
+    <img src="./images/bg-pentagon.svg" alt="pentagon" />
+    <div class="circle top"></div>
+    <div class="circle mid"></div>
+    <div class="circle bottom"></div>
   </div>
 </body>
 </html>
