@@ -19,7 +19,7 @@ html {
 
 body  {
   font-family: $font-famiy;
-  background: linear-gradient(to bottom right, $bg-gradient-one , $bg-gradient-two) no-repeat scroll;
+  background: linear-gradient(to bottom right, $bg-gradient-one , $bg-gradient-two) no-repeat fixed;
   background-size: cover;
   padding: 0 20px;
 }
@@ -27,12 +27,16 @@ body  {
 .header {
   display: flex;
   justify-content: space-between;
-  margin: 20px auto;
-  max-width: 650px;
-  height: 130px;
-  padding: 20px;
+  margin: 5vh auto;
+  max-width: 600px;
+  height: 120px;
+  padding: 10px 15px;
   border: 2px solid $header-outline;
   border-radius: 10px;
+}
+
+.logo {
+  object-fit: contain;
 }
 
 .score-card {
@@ -40,7 +44,7 @@ body  {
   width: 120px;
   background-color: #fff;
   border-radius: 5px;
-  padding: 10px;
+  padding: 10px 0;
   text-align: center;
   text-transform: uppercase;
 }
@@ -53,10 +57,9 @@ body  {
 
 .score-card__score {
   color: $dark-text;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 700;
 }
 
 @media screen and(max-width: 420px) {
-  
 }
