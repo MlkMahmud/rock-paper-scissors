@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,600,700&display=swap');
 
 $bg-gradient-one: hsl(214, 47%, 23%);
-$bg-gradient-two:hsl(237, 49%, 15%);
+$bg-gradient-two: hsl(237, 49%, 15%);
 $header-outline: #606e85;
 $score-text: hsl(229, 64%, 46%);
 $dark-text: hsl(229, 25%, 31%);
@@ -17,9 +17,14 @@ html {
   height: 100%;
 }
 
-body  {
+body {
   font-family: $font-famiy;
-  background: linear-gradient(to bottom right, $bg-gradient-one , $bg-gradient-two) no-repeat fixed;
+  background: linear-gradient(
+      to bottom right,
+      $bg-gradient-one,
+      $bg-gradient-two
+    )
+    no-repeat fixed;
   background-size: cover;
   padding: 0 20px;
 }
@@ -61,7 +66,116 @@ body  {
   font-weight: 700;
 }
 
+.main {
+  min-height: calc(90vh - 120px);
+  padding: 10vh 0;
+}
+
+.screen-one {
+  position: relative;
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.screen-one-bg {
+  max-width: 100%;
+}
+
+.character.one {
+  cursor: pointer;
+  position: absolute;
+  background: #f0f0f0;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  & img {
+    max-width: 40%;
+  }
+}
+
+.scissors {
+  border: 10px solid hsl(39, 89%, 49%);
+  box-shadow: inset 0px 3px 3px 0 rgba(0, 0, 0, 0.4), 1px 1px hsl(40, 84%, 53%),
+    1px 2px hsl(40, 84%, 51%), 1px 3px hsl(40, 84%, 49%),
+    1px 4px hsl(40, 84%, 47%), 1px 5px hsl(40, 84%, 45%),
+    1px 6px hsl(40, 84%, 43%), 1px 7px hsl(40, 84%, 41%),
+    1px 8px hsl(40, 84%, 39%), 1px 9px hsl(40, 84%, 37%),
+    1px 10px hsl(40, 84%, 35%);
+}
+
+.scissors.one {
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.spock {
+  border: 10px solid hsl(189, 59, 53);
+  box-shadow: inset 0 3px 3px 1px rgba(0, 0, 0, 0.4), 1px 1px hsl(189, 58, 57),
+    1px 2px hsl(189, 58, 55), 1px 3px hsl(189, 58, 53), 1px 4px hsl(189, 58, 51),
+    1px 5px hsl(189, 58, 49), 1px 6px hsl(189, 58, 47), 1px 7px hsl(189, 58, 45),
+    1px 8px hsl(189, 58, 43), 1px 9px hsl(189, 58, 41),
+    1px 10px hsl(189, 58, 39);
+}
+
+.spock.one {
+  top: 25%;
+  left: -10%;
+  transform: translateY(-25%);
+}
+
+.paper {
+  border: 10px solid hsl(230, 89, 62);
+  box-shadow: inset 0 3px 3px 1px rgba(0, 0, 0, 0.4), 1px 1px hsl(230, 89%, 65%),
+    1px 2px hsl(230, 89%, 63%), 1px 3px hsl(230, 89%, 61%),
+    1px 4px hsl(230, 89%, 59%), 1px 5px hsl(230, 89%, 57%),
+    1px 6px hsl(230, 89%, 55%), 1px 7px hsl(230, 89%, 53%),
+    1px 8px hsl(230, 89%, 51%), 1px 9px hsl(230, 89%, 49%),
+    1px 10px hsl(230, 89%, 47%);
+}
+
+.paper.one {
+  top: 25%;
+  right: -10%;
+  transform: translateY(-25%);
+}
+
+.lizard {
+  border: 10px solid hsl(261, 73, 60);
+  box-shadow: inset 0 3px 3px 1px rgba(0,0,0,.4), 1px 1px hsl(261, 72%, 63%),
+    1px 2px hsl(261, 72%, 61%), 1px 3px hsl(261, 72%, 59%), 
+    1px 4px hsl(261, 72%, 57%), 1px 5px hsl(261, 72%, 55%),
+    1px 6px hsl(261, 72%, 53%), 1px 7px hsl(261, 72%, 51%),
+    1px 8px hsl(261, 72%, 49%), 1px 9px hsl(261, 72%, 47%),
+    1px 10px hsl(261, 72%, 45%);
+}
+
+.lizard.one {
+  bottom: -10%;
+  left: 1%;
+}
+
+.rock {
+  border: 10px solid hsl(349, 71, 52);
+  box-shadow: inset 0 3px 3px 1px rgba(0, 0, 0, .4), 1px 1px hsl(349, 70%, 56%),
+    1px 2px hsl(349, 70%, 54%), 1px 3px hsl(349, 70%, 52%),
+    1px 4px hsl(349, 70%, 50%), 1px 5px hsl(349, 70%, 48%),
+    1px 6px hsl(349, 70%, 46%), 1px 7px hsl(349, 70%, 44%),
+    1px 8px hsl(349, 70%, 42%), 1px 9px hsl(349, 70%, 40%),
+    1px 10px hsl(349, 70%, 38%);
+}
+
+.rock.one {
+  bottom: -10%;
+  right: 1%;
+}
+
 .rules-btn {
+  position: absolute;
+  bottom: 5vh;
+  right: 20px;
+  cursor: pointer;
   text-transform: uppercase;
   font-family: inherit;
   font-size: 15px;
@@ -81,7 +195,11 @@ body  {
   width: 100%;
   height: 100%;
   background-color: #000;
-  opacity: .5;
+  opacity: 0.5;
+}
+
+.modal-overlay.close {
+  display: none;
 }
 
 .modal {
@@ -96,6 +214,10 @@ body  {
   background: #fff;
   padding: 25px;
   border-radius: 5px;
+}
+
+.modal.close {
+  display: none;
 }
 
 .modal-image-wrapper {
@@ -127,10 +249,49 @@ body  {
 }
 
 @media screen and(max-width: 520px) {
+  .screen-one-bg {
+    max-width: 60%;
+  }
+
+  .character.one {
+    height: 80px;
+    width: 80px;
+  }
+
+  .rock.one {
+    bottom: -15%;
+    right: 15%;
+  }
+
+  .lizard.one {
+    bottom: -15%;
+    left: 15%;
+  }
+
+  .scissors.one {
+    top: -20%;
+    left: 50%;
+  }
+
+  .spock.one {
+    top: 25%;
+    left: 10%;
+  }
+
+  .paper.one {
+    top: 25%;
+    right: 10%;
+  }
+
+  .rules-btn {
+    right: 50%;
+    transform: translateX(50%);
+  }
+
   .modal-overlay {
     display: none;
   }
-  
+
   .modal {
     width: 100%;
     height: 100%;
@@ -153,8 +314,17 @@ body  {
   }
 }
 
-@media screen and (max-height: 500px) {
+@media screen and (max-height: 600px) {
+  .main {
+    padding: 5vh 0;
+  }
+
   .modal-text {
     top: 5vh;
+  }
+
+  .character.one {
+    width: 70px;
+    height: 70px;
   }
 }

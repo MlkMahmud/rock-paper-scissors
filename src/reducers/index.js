@@ -1,8 +1,14 @@
 import { combineReducers } from 'redux';
-import score from './score';
+import cpuPick from './cpuPick';
 import isOpen from './isOpen';
+import playerPick from './playerPick';
+import score from './score';
+import verdict from './verdict';
 
 export default combineReducers({
-  score,
+  cpuPick,
   isOpen,
+  playerPick,
+  score,
+  verdict,
 });
