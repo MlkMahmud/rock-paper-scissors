@@ -72,7 +72,7 @@ module.exports = {
       icons: [
         {
           src: './public/icon.png',
-          sizes: [16, 32, 96, 128, 192, 256],
+          sizes: [16, 32, 96, 128, 192, 256, 512],
           destination: 'static/images',
         },
       ],
