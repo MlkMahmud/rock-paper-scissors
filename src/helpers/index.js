@@ -1,4 +1,4 @@
-export const selectRandom = (list = []) => {
+export const selectRandomCharacter = (list = []) => {
   const randomInt = Math.floor(Math.random() * list.length);
   return list[randomInt];
 };

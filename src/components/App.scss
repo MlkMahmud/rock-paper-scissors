@@ -1,11 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,600,700&display=swap');
 
-$bg-gradient-one: hsl(214, 47%, 23%);
+$bg-gradient-one: #1f3756;
 $bg-gradient-two: hsl(237, 49%, 15%);
 $header-outline: #606e85;
 $score-text: hsl(229, 64%, 46%);
 $dark-text: hsl(229, 25%, 31%);
 $font-famiy: 'Barlow Semi Condensed', sans-serif;
+
+@mixin colors($border, $shadow) {
+  border: 10px solid $border;
+  box-shadow:  inset 0 5px 3px 1px rgba(0,0,0,.4), 0px 1px $shadow,
+    0px 2px darken($shadow, 2%), 0px 3px darken($shadow, 4%),
+    0px 4px darken($shadow, 6%), 0px 5px darken($shadow, 8%),
+    0px 6px darken($shadow, 10%), 0px 7px darken($shadow, 12%),
+    0px 8px darken($shadow, 14%), 0px 9px darken($shadow, 16%),
+    0px 10px darken($shadow, 18%);
+}
 
 * {
   margin: 0;
@@ -95,13 +105,7 @@ body {
 }
 
 .scissors {
-  border: 10px solid hsl(39, 89%, 49%);
-  box-shadow: inset 0px 3px 3px 0 rgba(0, 0, 0, 0.4), 1px 1px hsl(40, 84%, 53%),
-    1px 2px hsl(40, 84%, 51%), 1px 3px hsl(40, 84%, 49%),
-    1px 4px hsl(40, 84%, 47%), 1px 5px hsl(40, 84%, 45%),
-    1px 6px hsl(40, 84%, 43%), 1px 7px hsl(40, 84%, 41%),
-    1px 8px hsl(40, 84%, 39%), 1px 9px hsl(40, 84%, 37%),
-    1px 10px hsl(40, 84%, 35%);
+  @include colors(hsl(40, 84%, 53%), hsl(39, 89%, 49%));
 }
 
 .scissors.one {
@@ -111,12 +115,7 @@ body {
 }
 
 .spock {
-  border: 10px solid hsl(189, 59, 53);
-  box-shadow: inset 0 3px 3px 1px rgba(0, 0, 0, 0.4), 1px 1px hsl(189, 58, 57),
-    1px 2px hsl(189, 58, 55), 1px 3px hsl(189, 58, 53), 1px 4px hsl(189, 58, 51),
-    1px 5px hsl(189, 58, 49), 1px 6px hsl(189, 58, 47), 1px 7px hsl(189, 58, 45),
-    1px 8px hsl(189, 58, 43), 1px 9px hsl(189, 58, 41),
-    1px 10px hsl(189, 58, 39);
+  @include colors(hsl(189, 58, 57), hsl(189, 59, 53));
 }
 
 .spock.one {
@@ -126,13 +125,7 @@ body {
 }
 
 .paper {
-  border: 10px solid hsl(230, 89, 62);
-  box-shadow: inset 0 3px 3px 1px rgba(0, 0, 0, 0.4), 1px 1px hsl(230, 89%, 65%),
-    1px 2px hsl(230, 89%, 63%), 1px 3px hsl(230, 89%, 61%),
-    1px 4px hsl(230, 89%, 59%), 1px 5px hsl(230, 89%, 57%),
-    1px 6px hsl(230, 89%, 55%), 1px 7px hsl(230, 89%, 53%),
-    1px 8px hsl(230, 89%, 51%), 1px 9px hsl(230, 89%, 49%),
-    1px 10px hsl(230, 89%, 47%);
+  @include colors(hsl(230, 89%, 65%), hsl(230, 89, 62));
 }
 
 .paper.one {
@@ -142,13 +135,7 @@ body {
 }
 
 .lizard {
-  border: 10px solid hsl(261, 73, 60);
-  box-shadow: inset 0 3px 3px 1px rgba(0,0,0,.4), 1px 1px hsl(261, 72%, 63%),
-    1px 2px hsl(261, 72%, 61%), 1px 3px hsl(261, 72%, 59%), 
-    1px 4px hsl(261, 72%, 57%), 1px 5px hsl(261, 72%, 55%),
-    1px 6px hsl(261, 72%, 53%), 1px 7px hsl(261, 72%, 51%),
-    1px 8px hsl(261, 72%, 49%), 1px 9px hsl(261, 72%, 47%),
-    1px 10px hsl(261, 72%, 45%);
+  @include colors(hsl(261, 72, 63), hsl(261, 73, 60));
 }
 
 .lizard.one {
@@ -157,18 +144,80 @@ body {
 }
 
 .rock {
-  border: 10px solid hsl(349, 71, 52);
-  box-shadow: inset 0 3px 3px 1px rgba(0, 0, 0, .4), 1px 1px hsl(349, 70%, 56%),
-    1px 2px hsl(349, 70%, 54%), 1px 3px hsl(349, 70%, 52%),
-    1px 4px hsl(349, 70%, 50%), 1px 5px hsl(349, 70%, 48%),
-    1px 6px hsl(349, 70%, 46%), 1px 7px hsl(349, 70%, 44%),
-    1px 8px hsl(349, 70%, 42%), 1px 9px hsl(349, 70%, 40%),
-    1px 10px hsl(349, 70%, 38%);
+  @include colors(hsl(349, 70, 56), hsl(349, 71, 52));
+}
+
+.screen-two {
+  display: flex;
+  justify-content: space-around;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.cpu-pick-placeholder {
+  height: 180px;
+  width: 180px;
+  background: #000;
+  border-radius: 50%;
+  margin-top: 5vh;
+  opacity: .2;
+}
+
+.character-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.two {
+  border-width: 20px;
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  margin-top: 5vh;
+}
+
+.screen-two-text {
+  color: #f0f0f0;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .rock.one {
   bottom: -10%;
   right: 1%;
+}
+
+.verdict {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5vh 5vh 0 5vh;
+}
+
+.verdict-text {
+  color: #fff;
+  font-weight: 600;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2vh;
+}
+
+.reset-btn {
+  cursor: pointer;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 10px 0;
+  color: $bg-gradient-one;
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .rules-btn {
@@ -261,11 +310,21 @@ body {
   .rock.one {
     bottom: -15%;
     right: 15%;
+    transform: translateX(-15%);
+  }
+
+  .verdict {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15vh;
+    margin: 0;
   }
 
   .lizard.one {
     bottom: -15%;
     left: 15%;
+    transform: translateX(15%);
   }
 
   .scissors.one {
@@ -282,6 +341,24 @@ body {
     top: 25%;
     right: 10%;
   }
+
+  .character-wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .character.two, .cpu-pick-placeholder {
+    margin-bottom: 5vh;
+    margin-top: 0;
+    border-width: 15px;
+    height: 120px;
+    width: 120px;
+
+    & img {
+      max-width: 50%;
+    }
+  }
+
+ 
 
   .rules-btn {
     right: 50%;
@@ -326,5 +403,26 @@ body {
   .character.one {
     width: 70px;
     height: 70px;
+    border-width: 5px;
+  }
+
+ .character.two,
+ .cpu-pick-placeholder {
+    border-width: 10px;
+    height: 100px;
+    width: 100px;
+  }
+
+  .rules-btn {
+    bottom: 2.5vh;
+  }
+
+  .verdict {
+    bottom: 12vh;
+  }
+
+  .verdict-text {
+  font-size: 2rem;
+  margin-bottom: 1vh;
   }
 }
