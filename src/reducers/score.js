@@ -1,4 +1,4 @@
-export default (state = 12, { type }) => {
+export default (state = 0, { type }) => {
   switch (type) {
     case 'WIN':
       return state + 1;
@@ -6,5 +6,5 @@ export default (state = 12, { type }) => {
       return state > 0 ? state - 1 : 0;
     default:
       return state;
-  }   
+  }
 };
