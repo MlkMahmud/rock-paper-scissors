@@ -5,7 +5,7 @@ import Character from './Character.jsx';
 import { filterCharacterList, selectRandomCharacter } from '../../helpers';
 import characters from '../../characters';
 
-const CpuPick = ({ playerPick, cpuPick, dispatch }) => {
+const CpuPick = ({ playerPick, cpuPick, dispatch, verdict }) => {
   useEffect(() => {
     const availableCharacters = filterCharacterList(characters, playerPick);
     const payload = selectRandomCharacter(availableCharacters);
@@ -15,13 +15,14 @@ const CpuPick = ({ playerPick, cpuPick, dispatch }) => {
   return (
     <div className="character-wrapper">
       <span className="screen-two-text">the house picked</span>
-      {cpuPick ? <Character character={cpuPick} screen="two" /> : <div className="cpu-pick-placeholder" />}
+      {cpuPick ? <Character character={cpuPick} screen={verdict === 'LOSE' ? 'two winner' : 'two'} /> : <div className="cpu-pick-placeholder" />}
     </div>
   );
 };
 
 CpuPick.defaultProps = {
   cpuPick: null,
+  verdict: null,
 };
 
 CpuPick.propTypes = {
@@ -38,11 +39,13 @@ CpuPick.propTypes = {
   }).isRequired,
 
   dispatch: PropTypes.func.isRequired,
+  verdict: PropTypes.string,
 };
 
-const mapStateToProps = ({ cpuPick, playerPick }) => ({
+const mapStateToProps = ({ cpuPick, playerPick , verdict }) => ({
   cpuPick,
   playerPick,
+  verdict,
 });
 
 export default connect(mapStateToProps)(CpuPick);
